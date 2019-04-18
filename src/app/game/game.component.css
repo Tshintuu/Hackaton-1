@@ -1,3 +1,26 @@
 .background{
     background: rgb(38, 153, 38);
+    height: 1200px;
+}
+#newenemy{
+    max-height: 50px;
+}
+.enemy{
+    background: green;
+    height: 300px;
+    width: 500px;
+}
+.health{
+    padding: 2%;
+    background: red;
+}
+.buttondiv{
+    height: 50px;
+}
+.imgenemy{
+    object-fit: cover;
+}
+img{
+    max-width:50%;
+max-height:50%;
 }
