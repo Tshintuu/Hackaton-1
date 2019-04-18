@@ -15,8 +15,6 @@ export class RandomenmyService {
     return this.enemyService.get('http://easteregg.wildcodeschool.fr/api/characters/random').pipe(
       map(
         (param_data:any) => {
-          let result:Enemy[] = [];
-          let currentData = null;
           let enemy:Enemy = new Enemy();
 
           enemy.name = param_data.name;
