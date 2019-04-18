@@ -1,3 +1,16 @@
-<p>
-  forms works!
-</p>
+<div class="title">EGG-FIGHTER</div> 
+<form (ngSubmit)="onSubmit()" #myForm="ngForm">
+  <div>
+    <label for="name-formulaire">Name</label>
+    <input name="name-formulaire" [(ngModel)]="model.name" type="text" required minlength="4" maxlength="15" #name="ngModel">
+  </div>
+  <div *ngIf="myForm.submitted">
+    <div *ngIf="name.errors">
+      <span *ngIf="name.errors.required">Your name must contain at least 4 characters </span>
+      <span *ngIf="name.errors.maxlength">Your name must not be longer than 15 characters</span>
+    </div>
+  </div>
+  <button [routerLink]="['/gamepage']" type="submit">Enter</button>
+  <button type="reset">Refresh</button>
+</form>
+
