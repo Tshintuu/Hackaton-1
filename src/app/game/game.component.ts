@@ -23,15 +23,17 @@ export class GameComponent implements OnInit {
 
   ngOnInit() {
 
-    
   }
   eggInventory = [];
+  inFight: boolean = true;
   player: Player = new Player;
+  currentEnemy: Enemy = new Enemy;
   private delay(ms: number)
     {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
   private async fight(){
+    this.inFight = false;
     this.enemyService.getRandomEnemy().subscribe(
       (param_data:Enemy) => {
         this.enemyData = param_data;
@@ -42,7 +44,6 @@ export class GameComponent implements OnInit {
         this.eggData = param_data;
       }
     )
-    let currentEnemy: Enemy = new Enemy;
     let enemyEgg: Egg = new Egg;
     //assigning API egg data to egg created during fight
     enemyEgg.name = this.eggData.name;
@@ -51,17 +52,17 @@ export class GameComponent implements OnInit {
     enemyEgg.rank = this.eggData.rank;
     enemyEgg.rarity = this.eggData.rarity;
     enemyEgg.power = this.eggData.power;
-    while(this.player.health > 0 && currentEnemy.health > 0){
-      currentEnemy.health -= (this.player.attack - currentEnemy.defense);
-      // 1 sec
-      await this.delay(1000);
-      console.log(currentEnemy.health)
-      if(currentEnemy.health <= 0){
+    while(this.player.health > 0 && this.currentEnemy.health > 0){
+      this.currentEnemy.health -= (this.player.attack - this.currentEnemy.defense);
+      // 0.5 sec
+      await this.delay(500);
+      console.log(this.currentEnemy.health)
+      if(this.currentEnemy.health <= 0){
         break
       }
-      this.player.health -= (currentEnemy.attack - this.player.defense);
-      // 1 sec
-      await this.delay(1000);
+      this.player.health -= (this.currentEnemy.attack - this.player.defense);
+      // 0.5 sec
+      await this.delay(500);
       console.log(this.player.health)
     }
     if(this.player.health <= 0 ) {
@@ -70,6 +71,8 @@ export class GameComponent implements OnInit {
     else{
       this.eggInventory.push(enemyEgg)
       alert("you won an egg")
+      this.inFight = true;
     }
   }
 }
+

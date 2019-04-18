@@ -1,8 +1,20 @@
-<div class="container-fluid d-flex justify-content-center background">
-<button (click)="fight()">Fight</button>
+<div class="container-fluid background row">
+  <div class="buttondiv col-12 d-flex justify-content-center">
+    <button *ngIf="inFight" id="newenemy" (click)="fight()">New Challenger</button>
+ </div>
+  <div class="enemy d-flex justify-content-center row col-4 offset-4">
+    <p *ngIf="!inFight" class="col-12">{{data.name}}</p>
+      <img   *ngIf="!inFight" src="{{data.image}}" alt="">
+    <p *ngIf="!inFight" class="health col-12">{{currentEnemy.health}}</p>
+  </div>
+  <div class="d-flex justify-content-center col-12">
+    <p class="health">Your health: {{player.health}}</p>
+  </div>
+  
 </div>
 
 <p>{{eggData.name}}</p>
 <img src="{{eggData.image}}"/>
+
 
 
