@@ -10,13 +10,10 @@ import { GamepageComponent } from './gamepage/gamepage.component';
 import { GameComponent } from './game/game.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { AttackComponent } from './attack/attack.component';
-<<<<<<< HEAD
 import { FormsModule } from '@angular/forms';
-=======
 import { RouterModule } from '@angular/router';
 import { ROUTES } from 'app.routes';
 
->>>>>>> fddb80685a565bef2b785d2dc821cc28ead0f558
 
 @NgModule({
   declarations: [
@@ -32,11 +29,9 @@ import { ROUTES } from 'app.routes';
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< HEAD
     FormsModule,
-=======
-    RouterModule.forRoot(ROUTES)
->>>>>>> fddb80685a565bef2b785d2dc821cc28ead0f558
+    RouterModule.forRoot(ROUTES),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
