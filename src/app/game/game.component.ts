@@ -15,29 +15,33 @@ export class GameComponent implements OnInit {
   ngOnInit() {
   }
   eggInventory = [];
+  player: Player = new Player;
   private delay(ms: number)
     {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
   private async fight(){
-    let currentEnemy: Enemy
-    let enemyEgg: Egg
-    while(Player.health > 0 && currentEnemy.health > 0){
-      Enemy.health -= (Player.attack - currentEnemy.defense);
+    let currentEnemy: Enemy = new Enemy;
+    let enemyEgg: Egg = new Egg;
+    while(this.player.health > 0 && currentEnemy.health > 0){
+      currentEnemy.health -= (this.player.attack - currentEnemy.defense);
       // 1 sec
       await this.delay(1000);
-
-      Player.health -= (currentEnemy.attack - Player.defense);
+      console.log(currentEnemy.health)
+      if(currentEnemy.health <= 0){
+        break
+      }
+      this.player.health -= (currentEnemy.attack - this.player.defense);
       // 1 sec
       await this.delay(1000);
-
+      console.log(this.player.health)
     }
-    if(Player.health <= 0 ) {
+    if(this.player.health <= 0 ) {
       alert("You died")
     }
     else{
       this.eggInventory.push(enemyEgg)
+      alert("you won an egg")
     }
   }
-*/
 }
