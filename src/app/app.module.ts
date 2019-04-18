@@ -9,7 +9,7 @@ import { GamepageComponent } from './gamepage/gamepage.component';
 import { GameComponent } from './game/game.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { AttackComponent } from './attack/attack.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { AttackComponent } from './attack/attack.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
