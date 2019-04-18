@@ -10,6 +10,7 @@ import { GamepageComponent } from './gamepage/gamepage.component';
 import { GameComponent } from './game/game.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { AttackComponent } from './attack/attack.component';
+
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from 'app.routes';
@@ -32,6 +33,9 @@ import { ROUTES } from 'app.routes';
     FormsModule,
     RouterModule.forRoot(ROUTES),
     HttpClientModule,
+    FormsModule,
+    RouterModule.forRoot(ROUTES)
+
   ],
   providers: [],
   bootstrap: [AppComponent]
