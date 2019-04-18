@@ -10,6 +10,8 @@ import { GamepageComponent } from './gamepage/gamepage.component';
 import { GameComponent } from './game/game.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { AttackComponent } from './attack/attack.component';
+import { RouterModule } from '@angular/router';
+import { ROUTES } from 'app.routes';
 
 
 @NgModule({
@@ -26,7 +28,7 @@ import { AttackComponent } from './attack/attack.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]
