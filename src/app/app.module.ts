@@ -3,10 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PlayComponent } from './play/play.component';
+import { FormsComponent } from './forms/forms.component';
+import { GamepageComponent } from './gamepage/gamepage.component';
+import { GameComponent } from './game/game.component';
+import { InventoryComponent } from './inventory/inventory.component';
+import { AttackComponent } from './attack/attack.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PlayComponent,
+    FormsComponent,
+    GamepageComponent,
+    GameComponent,
+    InventoryComponent,
+    AttackComponent,
+
   ],
   imports: [
     BrowserModule,
