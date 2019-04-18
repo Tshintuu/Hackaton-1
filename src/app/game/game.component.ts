@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RandomenmyService } from '../randomenmy.service';
+import { RandomeggService } from '../randomegg.service';
 import { Enemy } from '../enemy';
 import { Player } from '../player';
 import { Egg } from '../egg';
@@ -11,20 +12,18 @@ import { Egg } from '../egg';
 })
 export class GameComponent implements OnInit {
 
-  data:Enemy;
+  enemyData:Enemy;
+  eggData:Egg;
 
-  constructor(private enemyService:RandomenmyService) {
+  constructor(private enemyService:RandomenmyService, private eggService:RandomeggService) {
 
-    this.data;
+    this.enemyData;
+    this.eggData;
    }
 
   ngOnInit() {
 
-    this.enemyService.getRandomEnemy().subscribe(
-      (param_data:Enemy) => {
-        this.data = param_data;
-      }
-    )
+    
   }
   eggInventory = [];
   player: Player = new Player;
@@ -33,8 +32,25 @@ export class GameComponent implements OnInit {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
   private async fight(){
+    this.enemyService.getRandomEnemy().subscribe(
+      (param_data:Enemy) => {
+        this.enemyData = param_data;
+      }
+    )
+    this.eggService.getRandomEgg().subscribe(
+      (param_data:Egg) => {
+        this.eggData = param_data;
+      }
+    )
     let currentEnemy: Enemy = new Enemy;
     let enemyEgg: Egg = new Egg;
+    //assigning API egg data to egg created during fight
+    enemyEgg.name = this.eggData.name;
+    enemyEgg.image = this.eggData.image;
+    enemyEgg.color = this.eggData.color;
+    enemyEgg.rank = this.eggData.rank;
+    enemyEgg.rarity = this.eggData.rarity;
+    enemyEgg.power = this.eggData.power;
     while(this.player.health > 0 && currentEnemy.health > 0){
       currentEnemy.health -= (this.player.attack - currentEnemy.defense);
       // 1 sec
