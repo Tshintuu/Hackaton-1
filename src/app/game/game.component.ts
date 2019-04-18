@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RandomenmyService } from '../randomenmy.service';
+import { Enemy } from '../enemy';
 
 @Component({
   selector: 'app-game',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameComponent implements OnInit {
 
-  constructor() { }
+  data:Enemy;
+
+  constructor(private enemyService:RandomenmyService) {
+
+    this.data;
+   }
 
   ngOnInit() {
+
+    this.enemyService.getRandomEnemy().subscribe(
+      (param_data:Enemy) => {
+        this.data = param_data;
+      }
+    )
   }
 
 }
