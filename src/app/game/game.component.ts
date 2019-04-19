@@ -33,18 +33,19 @@ export class GameComponent implements OnInit {
   
   
   enemyMaxHealth = this.currentEnemy.health;
-  playerMaxHealth = this.player.health;
+  
   private delay(ms: number)
     {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
+
+  //Battle method
   private async fight(){
     this.currentEnemy.health += (this.difficulty*5);
     this.currentEnemy.attack += this.difficulty;
 
     let eggPower:number = this.eggInventory.length;
-    this.player.health += (eggPower*5);
-    this.player.attack += eggPower;
+    this.player.health = this.player.maxHealth;
     this.inFight = false;
     this.enemyService.getRandomEnemy().subscribe(
       (param_data:Enemy) => {
@@ -81,13 +82,55 @@ export class GameComponent implements OnInit {
       this.eggInventory.push(enemyEgg)
       alert("you won an egg and healed yourself")
       this.currentEnemy.health = this.enemyMaxHealth;
-      this.player.health = this.playerMaxHealth;
+      this.player.health = this.player.maxHealth;
       this.inFight = true;
       this.difficulty = this.difficulty + 1;
       console.log(this.difficulty)
     }
     
     console.log(this.eggInventory)
+
+    //Egg status modification
+    let statusSign: number;
+    let statusValue: number;
+    statusValue = parseInt(enemyEgg.power.charAt((enemyEgg.power.length) - 1));
+    if (enemyEgg.power.search("increase") != -1) {
+      statusSign = 1;
+    } else {
+      statusSign = -1;
+    }
+    if (enemyEgg.power.search("power") != -1) {
+      this.player.attack += (statusSign * statusValue);
+    } else if (enemyEgg.power.search("attack") != -1) {
+      //attack speed modification
+    } else if (enemyEgg.power.search("proctection") != -1) {
+      this.player.defense += (statusSign * statusValue);
+    } else if (enemyEgg.power.search("movement") != -1) {
+      //movement speed modification
+    } else {
+      this.player.maxHealth += (statusSign * statusValue);
+    }
+    console.log(this.player);
+  }
+
+  //Inventory method
+  private inventory(){
+    if(document.getElementById("openInventory").style.opacity == "1"){
+      document.getElementById("openInventory").style.opacity = "0";
+    }else{
+      document.getElementById("openInventory").style.opacity = "1";
+    }
+    
+  }
+
+  //Status method
+  private status(){
+    if(document.getElementById("openStatus").style.opacity == "1"){
+      document.getElementById("openStatus").style.opacity = "0";
+    }else{
+      document.getElementById("openStatus").style.opacity = "1";
+    }
+    
   }
 }
 

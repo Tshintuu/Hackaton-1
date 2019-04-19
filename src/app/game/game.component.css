@@ -32,3 +32,103 @@ img{
     margin-top:5%;
     margin-bottom:0px;
 }
+.inventory{
+    /*background-color: rgb(240, 207, 147);*/
+    background-image: url(https://image.freepik.com/free-photo/full-frame-shot-brown-leather-background_23-2147951253.jpg);
+    height: 13vh;
+    border: 2px dashed rgb(218, 212, 182);
+    border-radius: 10px 10px 0 0;
+}
+
+.inventory p{
+    font-size: 2.2rem;
+}
+
+.inventory:hover{
+    font-weight: 600;
+}
+
+.status{
+    background-color:rgb(240, 207, 147);
+    height: 13vh;
+    border: 10px solid black;
+    border-radius: 10px 10px 0 0;
+
+}
+
+.status p{
+    font-size: 2.2rem;
+}
+
+.status:hover{
+    font-weight: 600;
+}
+
+#openStatus{
+    position: absolute;
+    top: 17.5%;
+    left: 1%;
+    width: 35%;
+    height: 70vh;
+    background-color: rgba(255, 255, 255, 0.63);
+    border: 2px solid rgb(2, 2, 94);
+    border-radius: 10px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+#openStatus h2{
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 2%;
+}
+
+#openStatus p{
+    margin-left: 10%;
+    font-size: 2rem;
+    margin-top: 10%;
+}
+
+#openInventory{
+    position: absolute;
+    top: 17.5%;
+    right: 1%;
+    width: 35%;
+    height: 70vh;
+    background-color: rgba(255, 255, 255, 0.63);
+    border: 2px solid rgb(2, 2, 94);
+    border-radius: 10px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.eggImage{
+    border: 1px solid black;
+    border-radius: 10px;
+    position: relative;
+}
+
+.imageContainer{
+    position: relative;
+}
+
+.toolTip{
+    position:absolute;
+    background-color: black;
+    width: 120%;
+    color: white;
+    z-index:1;
+    text-align: center;
+    left: 60%;
+    top: -20%;
+    opacity: 0;
+    transition: all 0.5s;
+    border: 1px solid white;
+    border-radius: 10px;
+
+}
+
+.imageContainer:hover .toolTip{
+    opacity: 1;
+    transition: all 0.5s;
+}
