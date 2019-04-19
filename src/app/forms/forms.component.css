@@ -1,61 +1,57 @@
 section{
-
-    background-image: url(http://sfwallpaper.com/images/background-gaming-27.jpg);
+    background-image: url(https://static.vecteezy.com/system/resources/previews/000/144/603/original/vector-moai-statue-landmark.jpg);
     background-repeat:no-repeat;
-  height: 100vh;
+    height: 100vh;
 }
+
 .blanc{
-    height:25vh ;
+    height:20vh ;
 }
+
 .blanc1{
-    height:10vh ;
+    height:12vh ;
 }
 
 .titre{
-color: blueviolet;
+    color: rgb(17, 76, 87);
     font-family: 'Press Start 2P', cursive;
-    font-size: 2rem;
-    border:1px
-
+    font-size: 2.5rem;
+    border:1px;
 }
+
 .allbutton{
-    
-    border-radius: 4px;
-    background-color: #f4511e;
-    border: none;
+    border-radius: 5px;
+    background-color: #0f5bbe;
+    /*border: none;*/
     color: #FFFFFF;
-   
-    font-size: 1rem;
-    padding: 2%;
-    width: 40%;
-    transition: all 0.5s;
+    font-size: 1.5rem;
+    padding: 3%;
+    width: 45%;
+    /*ransition: all 0.5s;*/
     cursor: pointer;
     font-family: 'Press Start 2P', cursive;
-    
-
-  }
+}
   
-  .allbutton span {
+.allbutton span {
     cursor: pointer;
-   
     transition: 0.5s;
-  }
+}
   
-  .allbutton span:after {
+ 
+.allbutton span:after {
     content: '\00bb';
-   
     opacity: 0;
     top: 0;
     right: -20px;
     transition: 0.5s;
-  }
-  
-  .allbutton:hover span {
-    padding-right: 25px;
-  }
-  
-  .allbutton:hover span:after {
+}
+ 
+.allbutton:hover span:after {
     opacity: 1;
     right: 0;
-  }
+}
+
+.test{
+    text-align: center;
+}
   

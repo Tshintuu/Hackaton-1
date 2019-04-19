@@ -1,33 +1,40 @@
 .background{
-    background-image: url(https://static.vecteezy.com/system/resources/previews/000/144/603/original/vector-moai-statue-landmark.jpg);
-    height:100vh;
+    background-image: url(https://opengameart.org/sites/default/files/1_37.png);
+    height:100vh;    
 }
+
 #newenemy{
     max-height: 50px;
 }
+
 .enemy{
     background: rgba(55, 173, 118, 0.753);
     height: 500px;
     width: 500px;
     border-radius: 50%;
 }
+
 .health{
     padding: 2%;
     background: rgba(255, 0, 0, 0.541);
     font-size: 2.5rem;
     border-radius:10%;
 }
+
 .imgenemy{
     object-fit: cover;
 }
+
 img{
     max-width:50%;
     max-height:50%;
     border-radius: 10%;
 }
+
 .name{
     font-size: 3rem;
 }
+
 .fight{
     margin-top:5%;
     margin-bottom:0px;
