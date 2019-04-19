@@ -30,9 +30,12 @@ import { ROUTES } from 'app.routes';
   imports: [
     BrowserModule,
     AppRoutingModule,
- 
+    FormsModule,
+    RouterModule.forRoot(ROUTES),
+    HttpClientModule,
     FormsModule,
     RouterModule.forRoot(ROUTES)
+
   ],
   providers: [],
   bootstrap: [AppComponent]

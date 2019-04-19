@@ -1,96 +1,57 @@
 section{
-
-    background-image: url("https://static.vecteezy.com/system/resources/previews/000/144/603/original/vector-moai-statue-landmark.jpg");
-
+    background-image: url(https://static.vecteezy.com/system/resources/previews/000/144/603/original/vector-moai-statue-landmark.jpg);
+    background-repeat:no-repeat;
+    height: 100vh;
 }
 
-.title{
+.blanc{
+    height:20vh ;
+}
 
-    font-size: 1rem;
+.blanc1{
+    height:12vh ;
+}
+
+.titre{
+    color: rgb(17, 76, 87);
     font-family: 'Press Start 2P', cursive;
+    font-size: 2.5rem;
+    border:1px;
 }
 
-
-.button1{
-    
-    border-radius: 4px;
-    background-color: #f4511e;
-    border: none;
+.allbutton{
+    border-radius: 5px;
+    background-color: #0f5bbe;
+    /*border: none;*/
     color: #FFFFFF;
-    text-align: center;
-    font-size: 28px;
-    padding: 2%;
-    width: 20%;
-    transition: all 0.5s;
+    font-size: 1.5rem;
+    padding: 3%;
+    width: 45%;
+    /*ransition: all 0.5s;*/
     cursor: pointer;
     font-family: 'Press Start 2P', cursive;
-    
-
-  }
+}
   
-  .button1 span {
+.allbutton span {
     cursor: pointer;
-   
     transition: 0.5s;
-  }
+}
   
-  .button1 span:after {
+ 
+.allbutton span:after {
     content: '\00bb';
-   
     opacity: 0;
     top: 0;
     right: -20px;
     transition: 0.5s;
-  }
-  
-  .button1:hover span {
-    padding-right: 25px;
-  }
-  
-  .button1:hover span:after {
+}
+ 
+.allbutton:hover span:after {
     opacity: 1;
     right: 0;
-  }
+}
 
-
-
-.button2{
-    
-    border-radius: 4px;
-    background-color: #f4511e;
-    border: none;
-    color: #FFFFFF;
+.test{
     text-align: center;
-    font-size: 28px;
-    padding: 2%;
-    width: 20%;
-    transition: all 0.5s;
-    cursor: pointer;
-    font-family: 'Press Start 2P', cursive;
-    
-
-  }
+}
   
-  .button2 span {
-    cursor: pointer;
-   
-    transition: 0.5s;
-  }
-  
-  .button2 span:after {
-    content: '\00bb';
-   
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
-  
-  .button2:hover span {
-    padding-right: 25px;
-  }
-  
-  .button2:hover span:after {
-    opacity: 1;
-    right: 0;
-  }

@@ -1,24 +1,29 @@
-<section>
-  <div class="title offset-5 col-6">EGG-FIGHTER</div>
+<section class="offset-1 col-10">
 
-  <form class="container-fluid" (ngSubmit)="onSubmit()" #myForm="ngForm">
+  <form class=" subscribe container-fluid" (ngSubmit)="onSubmit()" #myForm="ngForm">
     <div class="row">
-      <div class="formulaire col-12">
-        <div>
-          <label for="name-formulaire">Name</label>
-          <input name="name-formulaire" [(ngModel)]="model.name" type="text" required minlength="4" maxlength="15"
-            #name="ngModel">
-        </div>
 
-        <div *ngIf="myForm.submitted">
-          <div *ngIf="name.errors">
-            <span *ngIf="name.errors.required">Your name must contain at least 4 characters </span>
-            <span *ngIf="name.errors.maxlength">Your name must not be longer than 15 characters</span>
+
+      <div class="formulaire container-fluid">
+        <div class="blanc"></div>
+        <div class="cadre offset-3 col 8">
+          <div class="pseudonyme">
+            <div class=" ">
+              <label class="titre" for="name-formulaire">Choose your Name</label>
+              <input class="offset-1 col-5" name="name-formulaire" [(ngModel)]="model.name" type="text" required
+                minlength="4" maxlength="15" #name="ngModel">
+            </div>
+
           </div>
+
+          <div class="blanc1"></div>
+
+          <button class=" offset-1 col-4 allbutton" [routerLink]="['/game']" type="submit"> <span> Let's
+              Go</span></button>
+
         </div>
       </div>
     </div>
-      <button class="button1 offset-5 col-6" [routerLink]="['/gamepage']" type="submit"><span>Enter</span></button>
-      <button class="button2 offset-5 col-6" type="reset"><span>Refresh</span></button>
   </form>
+
 </section>

@@ -15,10 +15,11 @@ export class GameComponent implements OnInit {
   enemyData:Enemy;
   eggData:Egg;
 
-  constructor(private enemyService:RandomenmyService, private eggService:RandomeggService) {
+  constructor(private enemyService:RandomenmyService, private eggService:RandomeggService,) {
 
     this.enemyData;
     this.eggData;
+    
    }
 
   ngOnInit() {
@@ -28,30 +29,36 @@ export class GameComponent implements OnInit {
   inFight: boolean = true;
   player: Player = new Player;
   currentEnemy: Enemy = new Enemy;
+  difficulty:number = 0;
+  
+  
+  enemyMaxHealth = this.currentEnemy.health;
+  playerMaxHealth = this.player.health;
   private delay(ms: number)
     {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
   private async fight(){
+    this.currentEnemy.health += (this.difficulty*5);
+    this.currentEnemy.attack += this.difficulty;
+
+    let eggPower:number = this.eggInventory.length;
+    this.player.health += (eggPower*5);
+    this.player.attack += eggPower;
     this.inFight = false;
     this.enemyService.getRandomEnemy().subscribe(
       (param_data:Enemy) => {
         this.enemyData = param_data;
       }
     )
+    let enemyEgg: Egg = new Egg;
     this.eggService.getRandomEgg().subscribe(
       (param_data:Egg) => {
         this.eggData = param_data;
+        enemyEgg = param_data;
       }
     )
-    let enemyEgg: Egg = new Egg;
-    //assigning API egg data to egg created during fight
-    enemyEgg.name = this.eggData.name;
-    enemyEgg.image = this.eggData.image;
-    enemyEgg.color = this.eggData.color;
-    enemyEgg.rank = this.eggData.rank;
-    enemyEgg.rarity = this.eggData.rarity;
-    enemyEgg.power = this.eggData.power;
+
     while(this.player.health > 0 && this.currentEnemy.health > 0){
       this.currentEnemy.health -= (this.player.attack - this.currentEnemy.defense);
       // 0.5 sec
@@ -65,14 +72,22 @@ export class GameComponent implements OnInit {
       await this.delay(500);
       console.log(this.player.health)
     }
+
     if(this.player.health <= 0 ) {
       alert("You died")
     }
     else{
+      console.log(enemyEgg)
       this.eggInventory.push(enemyEgg)
-      alert("you won an egg")
+      alert("you won an egg and healed yourself")
+      this.currentEnemy.health = this.enemyMaxHealth;
+      this.player.health = this.playerMaxHealth;
       this.inFight = true;
+      this.difficulty = this.difficulty + 1;
+      console.log(this.difficulty)
     }
+    
+    console.log(this.eggInventory)
   }
 }
 

@@ -1,26 +1,41 @@
 .background{
-    background: rgb(38, 153, 38);
-    height: 1200px;
+    background-image: url(https://opengameart.org/sites/default/files/1_37.png);
+    height:100vh;    
 }
+
 #newenemy{
     max-height: 50px;
 }
+
 .enemy{
-    background: green;
-    height: 300px;
+    background: rgba(55, 173, 118, 0.753);
+    height: 500px;
     width: 500px;
+    border-radius: 50%;
 }
+
 .health{
     padding: 2%;
-    background: red;
+    background: rgba(255, 0, 0, 0.541);
+    font-size: 2.5rem;
+    border-radius:10%;
 }
-.buttondiv{
-    height: 50px;
-}
+
 .imgenemy{
     object-fit: cover;
 }
+
 img{
     max-width:50%;
-max-height:50%;
+    max-height:50%;
+    border-radius: 10%;
+}
+
+.name{
+    font-size: 3rem;
+}
+
+.fight{
+    margin-top:5%;
+    margin-bottom:0px;
 }
