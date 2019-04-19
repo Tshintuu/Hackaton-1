@@ -127,6 +127,7 @@ img{
     border-radius: 10px;
     opacity: 0;
     transition: all 0.3s;
+    overflow:scroll;
 }
 
 .eggImage{
@@ -169,6 +170,16 @@ img{
     z-index:3;
     border-top: 2px solid red;
     border-bottom: 2px solid red;
+}
+.collect{
+    font-size: 3rem;
+    position: absolute;
+    text-align: center;
+    top: 70%;
+    left: 25%;
+    color:rgb(190, 157, 157);
+    z-index:3;
+
 }
 
 .filter{

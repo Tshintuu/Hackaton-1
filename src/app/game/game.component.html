@@ -1,6 +1,7 @@
 <div id="filter" class="filter"></div>
 <div class="filterDead" *ngIf="dead"></div>
 <p *ngIf="dead" class="gameover"> Game Over </p>
+<p *ngIf="dead" class="collect">You collected {{eggInventory.length}} egg(s)</p>
 <div class="container-fluid background row">
   <div class="enemy d-flex justify-content-center row col-4 offset-4 fight">
     <div id="enemyDamage"></div>
