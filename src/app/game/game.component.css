@@ -1,33 +1,58 @@
 .background{
-    background-image: url(https://static.vecteezy.com/system/resources/previews/000/144/603/original/vector-moai-statue-landmark.jpg);
-    height:100vh;
+    background-image: url(https://opengameart.org/sites/default/files/1_37.png);
+    height:100vh;    
 }
+
 #newenemy{
-    max-height: 50px;
+    max-height: 60px;
+    width: 70%;
+    z-index:1;
+    
 }
+
 .enemy{
     background: rgba(55, 173, 118, 0.753);
     height: 500px;
     width: 500px;
     border-radius: 50%;
+    position: relative;
 }
+
+#enemyDamage{
+    position: absolute;
+    background-color: red;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    opacity: 0;
+}
+
 .health{
     padding: 2%;
     background: rgba(255, 0, 0, 0.541);
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     border-radius:10%;
+    border: 2px solid red;
 }
+
 .imgenemy{
     object-fit: cover;
 }
+
 img{
     max-width:50%;
     max-height:50%;
     border-radius: 10%;
 }
+
 .name{
-    font-size: 3rem;
+    font-size: 2rem;
+    text-shadow: 5px 5px 10px white, -5px -5px 10px white;
+    /*background-color: rgba(255, 255, 255, 0.514);
+    border: 2px solid rgb(165, 165, 165);
+    border-radius: 10px;*/
 }
+
 .fight{
     margin-top:5%;
     margin-bottom:0px;
@@ -41,7 +66,8 @@ img{
 }
 
 .inventory p{
-    font-size: 2.2rem;
+    font-size: 2rem;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .inventory:hover{
@@ -57,7 +83,8 @@ img{
 }
 
 .status p{
-    font-size: 2.2rem;
+    font-size: 2rem;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .status:hover{
@@ -131,4 +158,48 @@ img{
 .imageContainer:hover .toolTip{
     opacity: 1;
     transition: all 0.5s;
+}
+.gameover{
+    font-size: 4rem;
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    left: 35%;
+    color:red;
+    z-index:3;
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+}
+
+.filter{
+    position: absolute;
+    background-color: red;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    opacity: 0;
+}
+
+.filterDead{
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+}
+
+#retry{
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    width: 10%;
+    height: 10%;
+    opacity: 0;
+    z-index: -2;
+    transition: opacity 2s;
+}
+
+#retry:hover{
+    background-color: red;
+    color: white;
 }

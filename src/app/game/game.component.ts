@@ -27,6 +27,7 @@ export class GameComponent implements OnInit {
   }
   eggInventory = [];
   inFight: boolean = true;
+  dead: boolean =false;
   player: Player = new Player;
   currentEnemy: Enemy = new Enemy;
   difficulty:number = 0;
@@ -61,21 +62,32 @@ export class GameComponent implements OnInit {
     )
 
     while(this.player.health > 0 && this.currentEnemy.health > 0){
+      document.getElementById("enemyDamage").style.opacity= "0.3";
+      await this.delay(100);
       this.currentEnemy.health -= (this.player.attack - this.currentEnemy.defense);
+      document.getElementById("enemyDamage").style.opacity= "0";
       // 0.5 sec
       await this.delay(500);
       console.log(this.currentEnemy.health)
       if(this.currentEnemy.health <= 0){
         break
       }
+      document.getElementById("filter").style.opacity= "0.3";
+      document.getElementById("filter").style.zIndex= "1";
+      await this.delay(100);
       this.player.health -= (this.currentEnemy.attack - this.player.defense);
+      document.getElementById("filter").style.opacity= "0";
+      document.getElementById("filter").style.zIndex= "0";
       // 0.5 sec
       await this.delay(500);
       console.log(this.player.health)
     }
 
     if(this.player.health <= 0 ) {
-      alert("You died")
+      this.dead = true;
+      document.getElementById("retry").style.opacity = "1";
+      document.getElementById("retry").style.zIndex = "2";
+
     }
     else{
       console.log(enemyEgg)

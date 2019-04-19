@@ -1,5 +1,9 @@
+<div id="filter" class="filter"></div>
+<div class="filterDead" *ngIf="dead"></div>
+<p *ngIf="dead" class="gameover"> Game Over </p>
 <div class="container-fluid background row">
   <div class="enemy d-flex justify-content-center row col-4 offset-4 fight">
+    <div id="enemyDamage"></div>
     <button *ngIf="inFight" id="newenemy" (click)="fight()">New Challenger</button>
     <p *ngIf="!inFight" class="col-12 d-flex justify-content-center name">{{enemyData.name}}</p>
     <img *ngIf="!inFight" src="{{enemyData.image}}" alt="">
@@ -7,14 +11,16 @@
       {{currentEnemy.health}}</p>
   </div>
   <div class="d-flex justify-content-center col-12 row mb-5">
-    <p class="health">Your health: {{player.health}}</p>
+    <p class="health mt-5">Your health: {{player.health}}</p>
   </div>
   <div class="container-col-12 w-100 mt-5">
     <div class="row">
       <div class="col-4 d-flex justify-content-center align-items-center status" (click)="status()">
         <p class="text-center">Status</p>
       </div>
-      <div class="col-4"></div>
+      <div class="col-4">
+        <p>{{model.name}}</p>
+      </div>
       <div class="col-4 d-flex justify-content-center align-items-center inventory" (click)="inventory()">
         <p class="text-center">Inventory</p>
       </div>
@@ -40,5 +46,6 @@
     </div>
     </div>
   </div>
+  <button id="retry" [routerLink]="['/forms']">Retry</button>
 
 </div>
