@@ -1,0 +1,61 @@
+section{
+
+    background-image: url(http://sfwallpaper.com/images/background-gaming-27.jpg);
+    background-repeat:no-repeat;
+  height: 100vh;
+}
+.blanc{
+    height:25vh ;
+}
+.blanc1{
+    height:10vh ;
+}
+
+.titre{
+color: blueviolet;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+    border:1px
+
+}
+.allbutton{
+    
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+   
+    font-size: 1rem;
+    padding: 2%;
+    width: 40%;
+    transition: all 0.5s;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    
+
+  }
+  
+  .allbutton span {
+    cursor: pointer;
+   
+    transition: 0.5s;
+  }
+  
+  .allbutton span:after {
+    content: '\00bb';
+   
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .allbutton:hover span {
+    padding-right: 25px;
+  }
+  
+  .allbutton:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  
