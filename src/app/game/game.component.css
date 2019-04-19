@@ -60,7 +60,7 @@ img{
 .inventory{
     /*background-color: rgb(240, 207, 147);*/
     background-image: url(https://image.freepik.com/free-photo/full-frame-shot-brown-leather-background_23-2147951253.jpg);
-    height: 13vh;
+    height: 8vh;
     border: 2px dashed rgb(218, 212, 182);
     border-radius: 10px 10px 0 0;
 }
@@ -76,7 +76,7 @@ img{
 
 .status{
     background-color:rgb(240, 207, 147);
-    height: 13vh;
+    height: 8vh;
     border: 10px solid black;
     border-radius: 10px 10px 0 0;
 
