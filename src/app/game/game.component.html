@@ -3,8 +3,8 @@
     <button *ngIf="inFight" id="newenemy" (click)="fight()">New Challenger</button>
  </div>
   <div class="enemy d-flex justify-content-center row col-4 offset-4">
-    <p *ngIf="!inFight" class="col-12">{{data.name}}</p>
-      <img   *ngIf="!inFight" src="{{data.image}}" alt="">
+    <p *ngIf="!inFight" class="col-12">{{enemyData.name}}</p>
+      <img   *ngIf="!inFight" src="{{enemyData.image}}" alt="">
     <p *ngIf="!inFight" class="health col-12">{{currentEnemy.health}}</p>
   </div>
   <div class="d-flex justify-content-center col-12">

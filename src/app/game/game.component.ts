@@ -39,19 +39,22 @@ export class GameComponent implements OnInit {
         this.enemyData = param_data;
       }
     )
+    let enemyEgg: Egg = new Egg;
     this.eggService.getRandomEgg().subscribe(
       (param_data:Egg) => {
         this.eggData = param_data;
+        enemyEgg = param_data;
       }
     )
-    let enemyEgg: Egg = new Egg;
+    
     //assigning API egg data to egg created during fight
-    enemyEgg.name = this.eggData.name;
+    /*enemyEgg.name = this.eggData.name;
     enemyEgg.image = this.eggData.image;
     enemyEgg.color = this.eggData.color;
     enemyEgg.rank = this.eggData.rank;
     enemyEgg.rarity = this.eggData.rarity;
-    enemyEgg.power = this.eggData.power;
+    enemyEgg.power = this.eggData.power;*/
+
     while(this.player.health > 0 && this.currentEnemy.health > 0){
       this.currentEnemy.health -= (this.player.attack - this.currentEnemy.defense);
       // 0.5 sec
@@ -73,6 +76,8 @@ export class GameComponent implements OnInit {
       alert("you won an egg")
       this.inFight = true;
     }
+    console.log(enemyEgg)
+    console.log(this.eggInventory)
   }
 }
 
