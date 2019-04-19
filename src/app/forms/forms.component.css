@@ -1,0 +1,64 @@
+section{
+    background-image: url(/../assets/moai.png);
+    background-repeat:no-repeat;
+    height: 100vh;
+}
+
+.blanc{
+    height:20vh ;
+}
+
+.blanc1{
+    height:12vh ;
+}
+
+.titre{
+    color: rgb(17, 76, 87);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5rem;
+    border:1px;
+}
+
+.allbutton{
+    border-radius: 5px;
+    background-color: #0f5bbe;
+    /*border: none;*/
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    padding: 3%;
+    width: 45%;
+    /*ransition: all 0.5s;*/
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+}
+  
+.allbutton span {
+    cursor: pointer;
+    transition: 0.5s;
+}
+  
+ 
+.allbutton span:after {
+    content: '\00bb';
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+ 
+.allbutton:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.test{
+    text-align: center;
+}
+.easter{
+    max-height: 250px;
+}
+.eastertxt{
+background: rgba(255, 255, 255, 0.829);
+font-size: 1.4rem;
+box-shadow: 10px 10px 0 rgb(0, 0, 0);
+}

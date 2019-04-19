@@ -1,3 +1,61 @@
-<p>
-  forms works!
-</p>
+<section>
+
+  <form class=" subscribe container-fluid" (ngSubmit)="onSubmit()" #myForm="ngForm">
+    <div class="row">
+
+
+      <div class="formulaire container">
+        <div class="blanc"></div>
+        <div class="cadre m-auto col-8">
+          <div class="container pseudonyme">
+            <div class="row">
+              <label class="m-auto titre" for="name-formulaire">Choose your Name</label>
+              <input class="m-auto col-5" name="name-formulaire" [(ngModel)]="model.name" type="text" required
+                minlength="4" maxlength="15" #name="ngModel">
+            </div>
+
+          </div>
+
+          <div class="blanc1"></div>
+          <div *ngIf="model.name=='Nicolas'" class="col-12">
+            <img class="easter" src="assets/nico.png" alt="">
+            <ul class="eastertxt">
+              <li>On dit de lui qu'il maitrise moultes library</li>
+              <li>Quand il declare un tableau, celui ci est infini, car Nico n'a pas de limite</li>
+            </ul>
+          </div>
+          <div *ngIf="model.name=='BX'"  class="col-12">
+              <img class="easter col-6" src="assets/BX.png" alt="">
+              <img class="easter col-6" src="https://upload.wikimedia.org/wikipedia/commons/3/31/Webysther_20160423_-_Elephpant.svg" alt="">
+              <ul class="eastertxt">
+                <li>Il fut temoin d'une apparition du elePHPant</li>
+                <li>Sa vision est basée sur les ordinateurs non verrouillés</li>
+              </ul>
+            </div>
+          <div *ngIf="model.name=='Maxime'"  class="col-12">
+              <img class="easter" src="assets/Maxime.png" alt="">
+              <ul class="eastertxt">
+                <li>Il vous observe</li>
+                <li>Il sait où vous habitez</li>
+              </ul>
+          </div>
+          <div *ngIf="model.name=='Haitam'"  class="col-12">
+              <img class="easter" src="assets/haitam.png" alt="">
+              <ul class="eastertxt">
+                <li>Stagiaire.</li>
+                <li>Fait moultes trucs de stagiaire.</li>
+                <li>C'est ce qu'il fait.</li>
+              </ul>
+          </div>
+          <div class="row">
+              <button class="m-auto allbutton" [routerLink]="['/game']" type="submit"> <span> Let's
+                  Go</span></button>
+          </div>
+          
+
+        </div>
+      </div>
+    </div>
+  </form>
+
+</section>
