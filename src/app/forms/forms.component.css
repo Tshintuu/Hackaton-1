@@ -54,4 +54,10 @@ section{
 .test{
     text-align: center;
 }
-  
+.easter{
+    max-height: 250px;
+}
+.eastertxt{
+background: rgba(255, 255, 255, 0.829);
+font-size: 1.4rem;
+}

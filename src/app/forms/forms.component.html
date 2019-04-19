@@ -6,7 +6,7 @@
 
       <div class="formulaire container-fluid">
         <div class="blanc"></div>
-        <div class="cadre offset-3 col 8">
+        <div class="cadre offset-3 col-8">
           <div class="pseudonyme">
             <div class=" ">
               <label class="titre" for="name-formulaire">Choose your Name</label>
@@ -17,7 +17,37 @@
           </div>
 
           <div class="blanc1"></div>
-
+          <div *ngIf="model.name=='Nicolas'" class="col-6">
+            <img class="easter" src="assets/nico.png" alt="">
+            <ul class="eastertxt">
+              <li>On dit de lui qu'il maitrise moulte library</li>
+              <li>On pretend qu'il ressent quand un nouveau framework est ecrit</li>
+              <li>Quand il declare un tableau, celui ci est infini, car Nico n'a pas de limite</li>
+            </ul>
+          </div>
+          <div *ngIf="model.name=='BX'"  class="col-6">
+              <img class="easter col-6" src="assets/BX.png" alt="">
+              <img class="easter col-6" src="https://upload.wikimedia.org/wikipedia/commons/3/31/Webysther_20160423_-_Elephpant.svg" alt="">
+              <ul class="eastertxt">
+                <li>Il fut temoin d'une apparition du elePHPant</li>
+                <li>Sa vision est basée sur les ordinateurs non verrouillés</li>
+              </ul>
+            </div>
+          <div *ngIf="model.name=='Maxime'"  class="col-6">
+              <img class="easter" src="assets/Maxime.png" alt="">
+              <ul class="eastertxt">
+                <li>Il vous observe</li>
+                <li>Il sait où vous habitez</li>
+              </ul>
+          </div>
+          <div *ngIf="model.name=='Haitam'"  class="col-6">
+              <img class="easter" src="assets/haitam.png" alt="">
+              <ul class="eastertxt">
+                <li>Stagiaire.</li>
+                <li>Fait moulte trucs de stagiaire.</li>
+                <li>C'est ce qu'il fait.</li>
+              </ul>
+          </div>
           <button class=" offset-1 col-4 allbutton" [routerLink]="['/game']" type="submit"> <span> Let's
               Go</span></button>
 
