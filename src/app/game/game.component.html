@@ -1,6 +1,7 @@
 <div class="container-fluid background row">
   <div class="enemy d-flex justify-content-center row col-4 offset-4 fight">
     <button *ngIf="inFight" id="newenemy" (click)="fight()">New Challenger</button>
+    <p *ngIf="dead" class="gameover"> Game Over </p>
     <p *ngIf="!inFight" class="col-12 d-flex justify-content-center name">{{enemyData.name}}</p>
       <img   *ngIf="!inFight" src="{{enemyData.image}}" alt="">
     <p *ngIf="!inFight" class="health col-12 d-flex justify-content-center">{{enemyData.name}} Health: {{currentEnemy.health}}</p>

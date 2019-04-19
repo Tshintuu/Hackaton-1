@@ -27,6 +27,7 @@ export class GameComponent implements OnInit {
   }
   eggInventory = [];
   inFight: boolean = true;
+  dead: boolean =false;
   player: Player = new Player;
   currentEnemy: Enemy = new Enemy;
   difficulty:number = 0;
@@ -74,7 +75,7 @@ export class GameComponent implements OnInit {
     }
 
     if(this.player.health <= 0 ) {
-      alert("You died")
+      this.dead = true;
     }
     else{
       console.log(enemyEgg)
