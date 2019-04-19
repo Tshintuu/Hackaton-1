@@ -22,7 +22,7 @@ export class RandomeggService {
           egg.color = param_data.color;
           egg.rank = param_data.rank;
           egg.rarity = param_data.rarity;
-          egg.power = egg.power;
+          egg.power = param_data.power;
 
           return egg;
           

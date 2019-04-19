@@ -1,16 +1,51 @@
+<div id="filter" class="filter"></div>
+<div class="filterDead" *ngIf="dead"></div>
+<p *ngIf="dead" class="gameover"> Game Over </p>
 <div class="container-fluid background row">
   <div class="enemy d-flex justify-content-center row col-4 offset-4 fight">
+    <div id="enemyDamage"></div>
     <button *ngIf="inFight" id="newenemy" (click)="fight()">New Challenger</button>
-    <p *ngIf="dead" class="gameover"> Game Over </p>
     <p *ngIf="!inFight" class="col-12 d-flex justify-content-center name">{{enemyData.name}}</p>
-      <img   *ngIf="!inFight" src="{{enemyData.image}}" alt="">
-    <p *ngIf="!inFight" class="health col-12 d-flex justify-content-center">{{enemyData.name}} Health: {{currentEnemy.health}}</p>
+    <img *ngIf="!inFight" src="{{enemyData.image}}" alt="">
+    <p *ngIf="!inFight" class="health col-12 d-flex justify-content-center">{{enemyData.name}} Health:
+      {{currentEnemy.health}}</p>
   </div>
-  <div class="d-flex justify-content-center col-12 row">
-    <p class="health">Your health: {{player.health}}</p>
+  <div class="d-flex justify-content-center col-12 row mb-5">
+    <p class="health mt-5">Your health: {{player.health}}</p>
   </div>
-  
+  <div class="container-col-12 w-100 mt-5">
+    <div class="row">
+      <div class="col-4 d-flex justify-content-center align-items-center status" (click)="status()">
+        <p class="text-center">Status</p>
+      </div>
+      <div class="col-4">
+        <p>{{model.name}}</p>
+      </div>
+      <div class="col-4 d-flex justify-content-center align-items-center inventory" (click)="inventory()">
+        <p class="text-center">Inventory</p>
+      </div>
+    </div>
+  </div>
+  <div id="openStatus">
+    <h2>Player status</h2>
+    <p><strong>Max health :</strong> {{player.maxHealth}}</p>
+    <p><strong>Attack power :</strong> {{player.attack}}</p>
+    <p><strong>Defense :</strong> {{player.defense}}</p>
+  </div>
+  <div id="openInventory" class="container">
+    <div class="row">
+    <div *ngFor="let items of eggInventory" class="col-12 no-gutters">
+      <div class="col-6 imageContainer no-gutters">
+        <div class="toolTip">
+          <h3>{{items.name}}</h3>
+          <p><strong>Rarity :</strong> {{items.rarity}}</p>
+          <p><strong>Power :</strong> {{items.power}}</p>
+        </div>
+        <img  class="m-1 w-100 h-50 eggImage" src="{{items.image}}">
+      </div>
+    </div>
+    </div>
+  </div>
+  <button id="retry" [routerLink]="['/forms']">Retry</button>
+
 </div>
-
-
-

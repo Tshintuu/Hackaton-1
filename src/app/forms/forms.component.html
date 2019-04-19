@@ -1,16 +1,16 @@
-<section class="offset-1 col-10">
+<section>
 
   <form class=" subscribe container-fluid" (ngSubmit)="onSubmit()" #myForm="ngForm">
     <div class="row">
 
 
-      <div class="formulaire container-fluid">
+      <div class="formulaire container">
         <div class="blanc"></div>
-        <div class="cadre offset-3 col-8">
-          <div class="pseudonyme">
-            <div class=" ">
-              <label class="titre" for="name-formulaire">Choose your Name</label>
-              <input class="offset-1 col-5" name="name-formulaire" [(ngModel)]="model.name" type="text" required
+        <div class="cadre m-auto col-8">
+          <div class="container pseudonyme">
+            <div class="row">
+              <label class="m-auto titre" for="name-formulaire">Choose your Name</label>
+              <input class="m-auto col-5" name="name-formulaire" [(ngModel)]="model.name" type="text" required
                 minlength="4" maxlength="15" #name="ngModel">
             </div>
 
@@ -50,6 +50,7 @@
           </div>
           <button class=" offset-1 col-4 allbutton" [routerLink]="['/game']" type="submit"> <span> Let's
               Go</span></button>
+            </div>
 
         </div>
       </div>
