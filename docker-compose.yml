@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+  eggsfighter:
+    container_name: eggsfighter
+    build: .
+    labels:
+      - traefik.enable=true
+      - traefik.backend=eggsfighter
+      - traefik.frontend.rule=Host:laloupe.wilders.dev;PathPrefixStrip:/eggsfighter
+      - traefik.docker.network=web
+      - traefik.port=80
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
