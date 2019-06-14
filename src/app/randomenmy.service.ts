@@ -12,7 +12,7 @@ export class RandomenmyService {
   constructor(private enemyService:HttpClient) { }
 
   public getRandomEnemy():Observable<Enemy>{
-    return this.enemyService.get('http://easteregg.wildcodeschool.fr/api/characters/random').pipe(
+    return this.enemyService.get('http://tours.wilders.dev/api/characters/random').pipe(
       map(
         (param_data:any) => {
           let enemy:Enemy = new Enemy();

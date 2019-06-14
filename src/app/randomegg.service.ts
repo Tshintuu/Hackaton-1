@@ -12,7 +12,7 @@ export class RandomeggService {
   constructor(private eggService:HttpClient) { }
 
   public getRandomEgg():Observable<Egg>{
-    return this.eggService.get('http://easteregg.wildcodeschool.fr/api/eggs/random').pipe(
+    return this.eggService.get('http://tours.wilders.dev/api/eggs/random').pipe(
       map(
         (param_data:any) => {
           let egg:Egg = new Egg();
